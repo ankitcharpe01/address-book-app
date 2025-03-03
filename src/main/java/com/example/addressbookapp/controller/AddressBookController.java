@@ -1,25 +1,35 @@
 package com.example.addressbookapp.controller;
 
+import com.example.addressbookapp.dto.AddressBookDTO;
+import com.example.addressbookapp.model.AddressBook;
+import com.example.addressbookapp.service.AddressBookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/addressbook")
 public class AddressBookController {
 
-    @GetMapping
-    public ResponseEntity<String> getAllContacts() {
-        return ResponseEntity.ok("Fetching all contacts");
+    @Autowired
+    private AddressBookService addressBookService;
+
+    @GetMapping("/contacts")
+    public ResponseEntity<List<AddressBook>> getAllContacts() {
+        return ResponseEntity.ok(addressBookService.getAllContacts());
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<String> getContactById(@PathVariable int id) {
         return ResponseEntity.ok("Fetching contact with ID: " + id);
     }
 
-    @PostMapping
-    public ResponseEntity<String> addContact() {
-        return ResponseEntity.ok("Adding new contact");
+    @PostMapping("/add")
+    public ResponseEntity<AddressBook> addContact(@RequestBody AddressBookDTO dto) {
+        return ResponseEntity.ok(addressBookService.addContact(dto));
     }
 
     @PutMapping("/{id}")
