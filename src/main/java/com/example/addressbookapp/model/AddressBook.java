@@ -1,6 +1,9 @@
 package com.example.addressbookapp.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class AddressBook {
@@ -8,12 +11,10 @@ public class AddressBook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private String phone;
     private String email;
-    public AddressBook() {
-    }
+
     public AddressBook(String name, String phone, String email) {
         this.name = name;
         this.phone = phone;
