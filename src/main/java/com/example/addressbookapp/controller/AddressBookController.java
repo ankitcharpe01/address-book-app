@@ -3,16 +3,12 @@ package com.example.addressbookapp.controller;
 import com.example.addressbookapp.dto.AddressBookDTO;
 import com.example.addressbookapp.model.AddressBook;
 import com.example.addressbookapp.service.AddressBookService;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import jakarta.validation.Valid;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -46,31 +42,17 @@ public class AddressBookController {
         }
     }
 
-    // Add New Contact with Validation
+    // Add New Contact
     @PostMapping("/contacts")
-    public ResponseEntity<?> addContact(@Valid @RequestBody AddressBookDTO dto, BindingResult result) {
-        if (result.hasErrors()) {
-            Map<String, String> errors = new HashMap<>();
-            for (FieldError error : result.getFieldErrors()) {
-                errors.put(error.getField(), error.getDefaultMessage());
-            }
-            return ResponseEntity.badRequest().body(errors);
-        }
+    public ResponseEntity<AddressBook> addContact(@Valid @RequestBody AddressBookDTO dto) {
         log.info("Received request to add new contact: {}", dto);
         AddressBook savedContact = addressBookService.addContact(dto);
         return ResponseEntity.ok(savedContact);
     }
 
-    // Update Contact By ID with Validation
+    // Update Contact By ID
     @PutMapping("/contacts/{id}")
-    public ResponseEntity<?> updateContact(@PathVariable Long id, @Valid @RequestBody AddressBookDTO dto, BindingResult result) {
-        if (result.hasErrors()) {
-            Map<String, String> errors = new HashMap<>();
-            for (FieldError error : result.getFieldErrors()) {
-                errors.put(error.getField(), error.getDefaultMessage());
-            }
-            return ResponseEntity.badRequest().body(errors);
-        }
+    public ResponseEntity<AddressBook> updateContact(@PathVariable Long id, @Valid @RequestBody AddressBookDTO dto) {
         log.info("Received request to update contact with ID: {}", id);
         Optional<AddressBook> updatedContact = addressBookService.updateContact(id, dto);
         if (updatedContact.isPresent()) {
