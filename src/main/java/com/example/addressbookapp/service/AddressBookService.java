@@ -1,6 +1,7 @@
 package com.example.addressbookapp.service;
 
 import com.example.addressbookapp.dto.AddressBookDTO;
+import com.example.addressbookapp.exception.AddressBookException;
 import com.example.addressbookapp.model.AddressBook;
 import com.example.addressbookapp.repository.AddressBookRepository;
 import jakarta.validation.Valid;
@@ -28,10 +29,14 @@ public class AddressBookService {
         return addressBookRepository.findAll();
     }
 
-    // Get Contact By ID
-    public Optional<AddressBook> getContactById(Long id) {
+    // Get Contact By ID with Exception Handling
+    public AddressBook getContactById(Long id) {
         log.info("Fetching contact with ID: {}", id);
-        return addressBookRepository.findById(id);
+        Optional<AddressBook> contact = addressBookRepository.findById(id);
+        if (!contact.isPresent()) {
+            throw new AddressBookException("Contact with ID " + id + " not found!");
+        }
+        return contact.get();
     }
 
     // Add New Contact with Validation
@@ -45,34 +50,31 @@ public class AddressBookService {
         return addressBookRepository.save(contact);
     }
 
-    // Update Contact By ID with Validation
-    public Optional<AddressBook> updateContact(Long id, @Valid AddressBookDTO dto) {
+    // Update Contact By ID with Exception Handling
+    public AddressBook updateContact(Long id, @Valid AddressBookDTO dto) {
         log.info("Updating contact with ID: {}", id);
         Optional<AddressBook> contactOptional = addressBookRepository.findById(id);
-
-        if (contactOptional.isPresent()) {
-            AddressBook contact = contactOptional.get();
-            contact.setName(dto.getName());
-            contact.setPhone(dto.getPhone());
-            contact.setEmail(dto.getEmail());
-
-            return Optional.of(addressBookRepository.save(contact));
-        } else {
-            log.warn("Update failed - Contact with ID {} not found", id);
-            return Optional.empty();
+        if (!contactOptional.isPresent()) {
+            throw new AddressBookException("Cannot update! Contact with ID " + id + " not found!");
         }
+
+        AddressBook contact = contactOptional.get();
+        contact.setName(dto.getName());
+        contact.setPhone(dto.getPhone());
+        contact.setEmail(dto.getEmail());
+
+        return addressBookRepository.save(contact);
     }
 
-    // Delete Contact By ID
+    // Delete Contact By ID with Exception Handling
     public boolean deleteContact(Long id) {
         log.info("Deleting contact with ID: {}", id);
-        if (addressBookRepository.existsById(id)) {
-            addressBookRepository.deleteById(id);
-            log.info("Contact with ID {} deleted successfully", id);
-            return true;
-        } else {
-            log.warn("Delete failed - Contact with ID {} not found", id);
-            return false;
+        Optional<AddressBook> contact = addressBookRepository.findById(id);
+        if (!contact.isPresent()) {
+            throw new AddressBookException("Cannot delete! Contact with ID " + id + " not found!");
         }
+        addressBookRepository.deleteById(id);
+        log.info("Contact with ID {} deleted successfully", id);
+        return false;
     }
 }
