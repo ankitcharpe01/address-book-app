@@ -1,0 +1,52 @@
+2025-03-04 10:26:31 [restartedMain] INFO  c.e.a.AddressBookAppApplication - Starting AddressBookAppApplication using Java 17.0.12 with PID 20312 (D:\CapgeminiTraining\BridgeLabzProgram\AddressBookApp\target\classes started by USER in D:\CapgeminiTraining\BridgeLabzProgram\AddressBookApp)
+2025-03-04 10:26:31 [restartedMain] DEBUG c.e.a.AddressBookAppApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-04 10:26:31 [restartedMain] INFO  c.e.a.AddressBookAppApplication - The following 1 profile is active: "dev"
+2025-03-04 10:26:31 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-04 10:26:31 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-04 10:26:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 2025 (http)
+2025-03-04 10:26:32 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-04 10:26:32 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-04 10:26:32 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-04 10:26:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1427 ms
+2025-03-04 10:26:33 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-04 10:26:33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 2025 (http) with context path '/'
+2025-03-04 10:26:33 [restartedMain] INFO  c.e.a.AddressBookAppApplication - Started AddressBookAppApplication in 2.7 seconds (process running for 3.365)
+2025-03-04 10:26:33 [restartedMain] INFO  c.e.a.AddressBookAppApplication - Application is started...
+2025-03-04 10:26:42 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-04 10:26:42 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-04 10:37:38 [restartedMain] INFO  c.e.a.AddressBookAppApplication - Starting AddressBookAppApplication using Java 17.0.12 with PID 19596 (D:\CapgeminiTraining\BridgeLabzProgram\AddressBookApp\target\classes started by USER in D:\CapgeminiTraining\BridgeLabzProgram\AddressBookApp)
+2025-03-04 10:37:38 [restartedMain] DEBUG c.e.a.AddressBookAppApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-04 10:37:38 [restartedMain] INFO  c.e.a.AddressBookAppApplication - The following 1 profile is active: "dev"
+2025-03-04 10:37:38 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-04 10:37:38 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-04 10:37:39 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 2025 (http)
+2025-03-04 10:37:39 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-04 10:37:39 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-04 10:37:39 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-04 10:37:39 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1444 ms
+2025-03-04 10:37:40 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-04 10:37:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 2025 (http) with context path '/'
+2025-03-04 10:37:40 [restartedMain] INFO  c.e.a.AddressBookAppApplication - Started AddressBookAppApplication in 2.949 seconds (process running for 3.646)
+2025-03-04 10:37:40 [restartedMain] INFO  c.e.a.AddressBookAppApplication - Application is started...
+2025-03-04 10:38:09 [http-nio-2025-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-04 10:38:09 [http-nio-2025-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-04 10:38:09 [http-nio-2025-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-03-04 10:38:09 [http-nio-2025-exec-1] INFO  c.e.a.c.AddressBookController - POST /addressbook - Adding new contact: AddressBookDTO(name=ankit, phone=1234567890, email=johndoe@example.com)
+2025-03-04 10:38:09 [http-nio-2025-exec-1] INFO  c.e.a.service.AddressBookService - New contact added: com.example.addressbookapp.model.AddressBook@40a4cb76
+2025-03-04 10:38:09 [http-nio-2025-exec-1] INFO  c.e.a.c.AddressBookController - New contact added successfully: com.example.addressbookapp.model.AddressBook@40a4cb76
+2025-03-04 10:38:18 [http-nio-2025-exec-3] INFO  c.e.a.c.AddressBookController - POST /addressbook - Adding new contact: AddressBookDTO(name=satyam, phone=1234567890, email=johndoe@example.com)
+2025-03-04 10:38:18 [http-nio-2025-exec-3] INFO  c.e.a.service.AddressBookService - New contact added: com.example.addressbookapp.model.AddressBook@7f6c6351
+2025-03-04 10:38:18 [http-nio-2025-exec-3] INFO  c.e.a.c.AddressBookController - New contact added successfully: com.example.addressbookapp.model.AddressBook@7f6c6351
+2025-03-04 10:38:24 [http-nio-2025-exec-5] INFO  c.e.a.c.AddressBookController - GET /addressbook - Fetching all contacts
+2025-03-04 10:38:24 [http-nio-2025-exec-5] INFO  c.e.a.service.AddressBookService - Fetching all contacts, total count: 2
+2025-03-04 10:38:36 [http-nio-2025-exec-4] INFO  c.e.a.service.AddressBookService - Deleting contact with ID: 1
+2025-03-04 10:38:36 [http-nio-2025-exec-4] INFO  c.e.a.service.AddressBookService - Contact with ID 1 deleted successfully
+2025-03-04 10:38:36 [http-nio-2025-exec-4] INFO  c.e.a.c.AddressBookController - Contact with ID 1 deleted successfully
+2025-03-04 10:38:42 [http-nio-2025-exec-6] INFO  c.e.a.c.AddressBookController - GET /addressbook - Fetching all contacts
+2025-03-04 10:38:42 [http-nio-2025-exec-6] INFO  c.e.a.service.AddressBookService - Fetching all contacts, total count: 1
+2025-03-04 10:38:55 [http-nio-2025-exec-7] INFO  c.e.a.c.AddressBookController - PUT /addressbook/2 - Updating contact: AddressBookDTO(name=ankit, phone=1234567890, email=johndoe@example.com)
+2025-03-04 10:38:55 [http-nio-2025-exec-7] INFO  c.e.a.service.AddressBookService - Updating contact with ID: 2
+2025-03-04 10:38:55 [http-nio-2025-exec-7] INFO  c.e.a.service.AddressBookService - Updated contact: com.example.addressbookapp.model.AddressBook@7f6c6351
+2025-03-04 10:38:55 [http-nio-2025-exec-7] INFO  c.e.a.c.AddressBookController - Contact updated successfully: com.example.addressbookapp.model.AddressBook@7f6c6351
+2025-03-04 10:39:00 [http-nio-2025-exec-10] INFO  c.e.a.c.AddressBookController - GET /addressbook - Fetching all contacts
+2025-03-04 10:39:00 [http-nio-2025-exec-10] INFO  c.e.a.service.AddressBookService - Fetching all contacts, total count: 1
