@@ -4,6 +4,7 @@ import com.example.addressbookapp.dto.AddressBookDTO;
 import com.example.addressbookapp.model.AddressBook;
 import com.example.addressbookapp.service.AddressBookService;
 import lombok.extern.slf4j.Slf4j;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,7 +45,7 @@ public class AddressBookController {
 
     // POST Add New Contact
     @PostMapping
-    public ResponseEntity<AddressBook> addContact(@RequestBody AddressBookDTO dto) {
+    public ResponseEntity<AddressBook> addContact(@Valid @RequestBody AddressBookDTO dto) {
         log.info("POST /addressbook - Adding new contact to DB: {}", dto);
         AddressBook newContact = addressBookService.addContact(dto);
         log.info("New contact added successfully: {}", newContact);
@@ -53,7 +54,7 @@ public class AddressBookController {
 
     // PUT Update Contact By ID
     @PutMapping("/{id}")
-    public ResponseEntity<AddressBook> updateContact(@PathVariable Long id, @RequestBody AddressBookDTO dto) {
+    public ResponseEntity<AddressBook> updateContact(@PathVariable Long id, @RequestBody @Valid AddressBookDTO dto) {
         log.info("PUT /addressbook/{} - Updating contact in DB: {}", id, dto);
         Optional<AddressBook> updatedContactOptional = addressBookService.updateContact(id, dto);
         if (updatedContactOptional.isPresent()) {
