@@ -25,4 +25,11 @@ public class GlobalExceptionHandler {
         // Return user-friendly response
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
+
+
+    // Handle AddressBookException globally
+    @ExceptionHandler(AddressBookException.class)
+    public ResponseEntity<String> handleAddressBookException(AddressBookException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
 }
