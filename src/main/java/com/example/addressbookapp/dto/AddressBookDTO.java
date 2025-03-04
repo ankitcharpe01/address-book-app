@@ -1,18 +1,14 @@
 package com.example.addressbookapp.dto;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class AddressBookDTO {
     private String name;
     private String phone;
     private String email;
-
-    public AddressBookDTO(String name, String phone, String email) {
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-    }
-
 }
-
