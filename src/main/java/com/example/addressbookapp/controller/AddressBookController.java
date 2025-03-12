@@ -17,6 +17,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/addressbook")
 @Slf4j
+@CrossOrigin(origins = "*")
 public class AddressBookController {
 
     private final AddressBookService addressBookService;
@@ -76,6 +77,7 @@ public class AddressBookController {
     public ResponseEntity<Void> deleteContact(@PathVariable Long id) {
         log.info("Received request to delete contact with ID: " + id);
         addressBookService.deleteContact(id);
+        log.info("Delete contact with ID: " + id);
         return ResponseEntity.noContent().build();
     }
 }

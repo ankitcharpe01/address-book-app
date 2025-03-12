@@ -19,19 +19,17 @@ public class AddressBook {
     private Long id;
     @NotEmpty(message = "Name is required and cannot be empty")
     @Pattern(regexp = "^[A-Z][a-zA-Z\\s]{1,}$", message = "Name must start with a capital letter and contain at least 2 characters")
-    private String name;
+    private String fullName;
+
+    private String address;
+    private String city;
+    private String state;
+
+    @Pattern(regexp = "^\\d{6}$", message = "Zip Code must be a 6 digit")
+    private String zipCode;
 
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "^[0-9]{10}$", message = "Phone number must be exactly 10 digits")
-    private String phone;
+    private String phoneNumber;
 
-    @NotBlank(message = "Email is required")
-    @Email(message = "Invalid email format")
-    private String email;
-
-    public AddressBook( String name, String email, String phone) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-    }
 }

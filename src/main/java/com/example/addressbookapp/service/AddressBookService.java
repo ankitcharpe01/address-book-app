@@ -43,9 +43,12 @@ public class AddressBookService {
     public AddressBook addContact(@Valid AddressBookDTO dto) {
         log.info("Adding new contact: {}", dto);
         AddressBook contact = new AddressBook();
-        contact.setName(dto.getName());
-        contact.setPhone(dto.getPhone());
-        contact.setEmail(dto.getEmail());
+        contact.setFullName(dto.getFullName());
+        contact.setPhoneNumber(dto.getPhoneNumber());
+        contact.setAddress(dto.getAddress());
+        contact.setCity(dto.getCity());
+        contact.setState(dto.getState());
+        contact.setZipCode(dto.getZipCode());
 
         return addressBookRepository.save(contact);
     }
@@ -59,9 +62,12 @@ public class AddressBookService {
         }
 
         AddressBook contact = contactOptional.get();
-        contact.setName(dto.getName());
-        contact.setPhone(dto.getPhone());
-        contact.setEmail(dto.getEmail());
+        contact.setFullName(dto.getFullName());
+        contact.setPhoneNumber(dto.getPhoneNumber());
+        contact.setAddress(dto.getAddress());
+        contact.setCity(dto.getCity());
+        contact.setState(dto.getState());
+        contact.setZipCode(dto.getZipCode());
 
         return addressBookRepository.save(contact);
     }

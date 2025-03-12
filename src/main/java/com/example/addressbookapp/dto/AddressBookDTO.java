@@ -9,15 +9,11 @@ import lombok.Setter;
 @Setter
 public class AddressBookDTO {
 
-    @NotEmpty(message = "Name is required and cannot be empty")
-    @Pattern(regexp = "^[A-Z][a-zA-Z\\s]{2,}$", message = "Name must start with a capital letter and have at least 3 characters")
-    private String name;
-
-    @NotEmpty(message = "Phone number cannot be empty")
-    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Phone number must be 10 digits and start with 6-9")
-    private String phone;
-
-    @NotEmpty(message = "Email cannot be empty")
-    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", message = "Invalid email format")
-    private String email;
+    private Long id;
+    private String fullName;
+    private String address;
+    private String city;
+    private String state;
+    private String zipCode;
+    private String phoneNumber;
 }
